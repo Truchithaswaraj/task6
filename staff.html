@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Name - Doctors & Staff</title>
+    <style>
+        /* CSS Styles */
+        body {
+            background-image: url("https://thumbs.dreamstime.com/b/doctor-leading-medical-blurry-hospital-background-doctor-leading-medical-blurry-hospital-background-130587421.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            color: #1e1c1c;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        nav {
+            padding: 10px;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+        
+        nav ul li {
+            display: inline;
+            margin: 10px;
+        }
+        
+        .profiles {
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .profiles h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .search {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .search input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .profile {
+            border: #1e1c1c;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .profile:hover{
+            background-color:#dcdcdc;
+        }
+        
+        .profile h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .profile p {
+            margin-bottom: 10px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ram  Hospital</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html"> About Us</a></li>
+            <li><a href="departments.html">Departments</a></li>
+            <li><a href="patientinfo.html">Patient-guide</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="profiles">
+        <h2>Doctors & Staff</h2>
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Search doctors...">
+        </div>
+        <div id="profilesList">
+            <div class="profile">
+                <h3>Dr. John Smith</h3>
+                <p>Qualifications: MBBS, MD</p>
+                <p>Specialization: Cardiology</p>
+                <p>Experience: 10 years</p>
+                <p>Contact: 123-456-7890</p>
+            </div>
+            <div class="profile">
+                <h3>Dr. Jane Doe</h3>
+                <p>Qualifications: MBBS, MS</p>
+                <p>Specialization: Neurology</p>
+                <p>Experience: 8 years</p>
+                <p>Contact: 987-654-3210</p>
+            </div>
+            <!-- Add more profiles here -->
+        </div>
+    </div>
+    
+    <script>
+        // JavaScript for search functionality
+        const searchInput = document.getElementById('searchInput');
+        const profilesList = document.getElementById('profilesList');
+
+        searchInput.addEventListener('keyup', function (event) {
+            const searchTerm = event.target.value.toLowerCase();
+            const profiles = profilesList.getElementsByClassName('profile');
+
+            Array.from(profiles).forEach(function (profile) {
+                const profileText = profile.innerText.toLowerCase();
+                if (profileText.includes(searchTerm)) {
+                    profile.style.display = 'block';
+                } else {
+                    profile.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
